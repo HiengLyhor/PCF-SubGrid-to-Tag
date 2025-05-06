@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+  <control namespace="SyncTagPicker" constructor="SyncTagPicker" version="0.0.38"
+    display-name-key="SyncTagPicker"
+    description-key="This custom control will change a subgrid view into a dropdown select tag."
+    control-type="standard">
+    <data-set name="tagsDataSet" display-name-key="Tags Dataset" />
+    <external-service-usage enabled="false" />
+    <feature-usage>
+      <uses-feature name="Utility" required="true" />
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
+    <property name="showRecordImage" display-name-key="Show Record Image"
+      description-key="Show the record image beside the text." of-type="Enum" usage="input"
+      required="true">
+      <value name="false" display-name-key="false" description-key="False" default="true">false</value>
+      <value name="true" display-name-key="true" description-key="True">true</value>
+    </property>
+    <property name="showCreateNewRecord" display-name-key="Add Create new" description-key="Add create new record" of-type="Enum" default-value="0" usage="input" required="true">
+      <value name="Yes" display-name-key="Yes" description-key="Yes">1</value>
+      <value name="No" display-name-key="No" description-key="No">0</value>
+    </property>
+    <resources>
+      <code path="index.ts" order="1" />
+      <resx path="strings/FluentUITagPicker.1033.resx" version="1.0.0" />
+      <resx path="strings/FluentUITagPicker.1036.resx" version="1.0.0" />
+    </resources>
+  </control>
+</manifest>
