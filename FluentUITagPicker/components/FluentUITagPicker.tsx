@@ -287,6 +287,12 @@ const FluentUITagPicker = (): JSX.Element => {
                                             if (result.savedEntityReference?.length > 0) {
                                                 const newId = result.savedEntityReference[0].id.replace('{', '').replace('}', '').toLowerCase();
                                                 // Optionally handle the new record ID here
+                                                setSelectedOptions((prevSelectedOptions) => {
+                                                    const newOptions = [...prevSelectedOptions, newId];
+                                                    setComitedOptions(newOptions);
+                                                    return newOptions;
+                                                });
+                                                pcfcontext.context.parameters.tagsDataSet.refresh();
                                             }
                                         });
                                     }}
@@ -296,7 +302,7 @@ const FluentUITagPicker = (): JSX.Element => {
                                     {pcfcontext.context.resources.getString('Create New Record') || 'Create New Record'}
                                 </TagPickerOption>
                             )}
-                            
+
                             {children}
                         </TagPickerList>
                     </TagPicker>
